@@ -1,0 +1,35 @@
+/* 全局样式配置 */
+pages{
+	height: 100%;
+	font-size: 28upx;
+	line-height: 1.8;
+	background: #FFFFFF;
+	width: 100%;
+}
+image{
+	width: 100%;
+}
+
+
+/* 主背景颜色 (橙色) */
+
+.main-bg-color{
+	background: #fd6801;
+}
+/* 主点击背景颜色 （淡橙色） */
+.main-bg-hover-color{
+	background-color: rgba(253,104,1,0.85);
+}
+
+/* 主字体颜色(橙色) */
+.main-text-color{
+	color: #fd6801;
+}
+.main-border-color{
+	border-color:#F1F1F1;
+}
+
+
+
+
+

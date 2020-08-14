@@ -3,14 +3,92 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页",
+				"app-plus": {
+						"scrollIndicator":"none", // 不出现滚动条
+						"titleNView": {
+							"searchInput": {
+								"align":"left",
+									"backgroundColor": "#fff",
+									"borderRadius": "6px", //输入框圆角
+									"placeholder": "请输入搜索内容",
+									"disabled": true //disable时点击输入框不置，可以跳到新页面搜索
+							},
+							"buttons":[
+								{
+									"color":"#989898",
+									"float":"left",
+									"colorPressed":"#fd68001",
+									"fontSize":"22px",
+									"fontSrc":"/static/font/iconfont.tff",
+									"text":"\ue72c"
+								},
+								{
+									"color":"#989898",
+									"float":"right",
+									"colorPressed":"#fd68001",
+									"fontSize":"22px",
+									"fontSrc":"/static/font/iconfont.tff",
+									"text":"\ue661"
+								}
+							]
+						}
+				}
+			}
+		},
+		{
+			"path": "pages/class/class",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#ec6c60",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/tabbar/index.png",
+	        "selectedIconPath": "static/tabbar/indexSelected.png",
+	        "text": "首页"
+	    }, {
+	        "pagePath": "pages/class/class",
+	        "iconPath": "static/tabbar/cate.png",
+	        "selectedIconPath": "static/tabbar/cateSelected.png",
+	        "text": "分类"
+	    },
+		{
+		    "pagePath": "pages/cart/cart",
+		    "iconPath": "static/tabbar/car.png",
+		    "selectedIconPath": "static/tabbar/carSelected.png",
+		    "text": "购物车"
+		},
+		{
+		    "pagePath": "pages/my/my",
+		    "iconPath": "static/tabbar/my.png",
+		    "selectedIconPath": "static/tabbar/mySelected.png",
+		    "text": "我的"
+		}
+		]
 	}
 }
