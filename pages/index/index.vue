@@ -1,41 +1,33 @@
 <template>
 	<view class="content">
-		<scroll-view scroll-x="true" class="border-bottom scroll-row">
-			<view v-for="(item,index) in tabBars" :key="index" class="scroll-row-item px-3">
+		<scroll-view scroll-x="true" class="border-bottom scroll-row" :scroll-into-view="scrollInto">
+			<view v-for="(item,index) in tabBars" :key="index" class="scroll-row-item px-3" @click="changeTab(index)">
 					<text class="font-md" :class="tabIndex === index ? 'main-text-color':''">{{item.name}}</text>
 			</view>
 		</scroll-view>
 		
-		<swiper :current="tabIndex" style="width: 100%;"  :style="'height:'+scrollH+'px;'" >
-			<swiper-item v-for="(item,index) in tabBars" :key="index">
+		<swiper :duration="150" :current="tabIndex" style="width: 100%;"  :style="'height:'+scrollH+'px;'" @change="onChangeTab" >
+			<swiper-item v-for="(item,index) in tabBars" :key="index" :id="'tab'+index">
 				<view class="swiper-item">
-					<scroll-view scroll-y="true"  >
-						<view v-for="i in 100" :key="i">{{i}}</view>
+					<scroll-view scroll-y="true"  :style="'height:'+scrollH+'px;'">
+						<!-- 轮播图组件 -->
+						<swiperImage :swiperList="swipers" />
+						<indexNav :indexIconNav="indexIconNav" />
+						<divider></divider>
+						<threeAdv :threeAdvObj="threeAdvObj"></threeAdv>
+						<divider></divider>
+						<card :showhead="false">
+							<block slot="title">每日精选1</block>
+							<image src="../../static/images/bg.jpg" mode="widthFix"></image>
+						</card>
+						<commonList :dataList="dataList"></commonList>
 					</scroll-view>
 				</view>
 			</swiper-item>
 			
 		</swiper>
 		
-		<!-- 轮播图组件 -->
-		<!-- <swiperImage :swiperList="swipers" />
 		
-		<indexNav :indexIconNav="indexIconNav" />
-		
-		<divider></divider>
-		
-		
-		<threeAdv :threeAdvObj="threeAdvObj"></threeAdv>
-		
-		<divider></divider>
-		
-		
-		<card :showhead="false">
-			<block slot="title">标题1</block>
-			<image src="../../static/images/bg.jpg" mode="widthFix"></image>
-		</card>
-		
-		<commonList :dataList="dataList"></commonList> -->
 	</view>
 </template>
 
@@ -55,6 +47,7 @@
 		},
 		data() {
 			return {
+				scrollInto:"tab1",
 				scrollH:500,
 				tabIndex:0,
 				tabBars:[
@@ -117,9 +110,26 @@
 						this.scrollH = res.windowHeight - uni.upx2px(80)
 					}
 				})
+				
+		},
+		onNavigationBarSearchInputClicked(){
+			uni.navigateTo({
+				url:'/pages/search/search'
+			})
 		},
 		methods: {
-
+				changeTab(index){
+					if(this.tabIndex === index){
+						 return
+					}
+					this.tabIndex = index
+					this.scrollInto= "tab"+index
+				},
+				onChangeTab(e){
+					// 监听滑动列表
+					this.changeTab(e.detail.current)
+					this.scrollInto= "tab"+e.detail.current
+				}
 		}
 	}
 </script>

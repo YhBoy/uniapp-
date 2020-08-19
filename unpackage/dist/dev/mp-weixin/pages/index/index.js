@@ -135,45 +135,133 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var swiperImage = function swiperImage() {__webpack_require__.e(/*! require.ensure | components/index/swiper-image */ "components/index/swiper-image").then((function () {return resolve(__webpack_require__(/*! @/components/index/swiper-image.vue */ 44));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var indexNav = function indexNav() {__webpack_require__.e(/*! require.ensure | components/index/index-nav */ "components/index/index-nav").then((function () {return resolve(__webpack_require__(/*! @/components/index/index-nav.vue */ 49));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var threeAdv = function threeAdv() {__webpack_require__.e(/*! require.ensure | components/index/three-adv */ "components/index/three-adv").then((function () {return resolve(__webpack_require__(/*! @/components/index/three-adv.vue */ 54));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | components/index/card */ "components/index/card").then((function () {return resolve(__webpack_require__(/*! @/components/index/card.vue */ 59));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! @/components/common/common-list.vue */ 64));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
+  components: {
+    swiperImage: swiperImage,
+    indexNav: indexNav,
+    threeAdv: threeAdv,
+    card: card,
+    commonList: commonList },
+
   data: function data() {
     return {
+      scrollInto: "tab1",
+      scrollH: 500,
+      tabIndex: 0,
+      tabBars: [
+      { name: '推荐' },
+      { name: '手机' },
+      { name: '智能' },
+      { name: '电视' },
+      { name: '笔记本' },
+      { name: '家电' },
+      { name: '生活周边' }],
+
       swipers: [
-      {
-        url: '../../static/images/demo/demo1.jpg' },
+      { url: '../../static/images/indexBanner/1.jpg' },
+      { url: '../../static/images/indexBanner/2.jpg' },
+      { url: '../../static/images/indexBanner/3.jpg' }],
 
-      {
-        url: '../../static/images/demo/demo2.jpg' },
+      indexIconNav: [
+      { url: '../../static/images/indexnav/1.png', text: '新品发布' },
+      { url: '../../static/images/indexnav/2.png', text: '小米众筹' },
+      { url: '../../static/images/indexnav/3.png', text: '以旧换新' },
+      { url: '../../static/images/indexnav/4.png', text: '一份拼团' },
+      { url: '../../static/images/indexnav/5.png', text: '超值特卖' },
+      { url: '../../static/images/indexnav/6.png', text: '小米秒杀' },
+      { url: '../../static/images/indexnav/7.png', text: '真心想要' },
+      { url: '../../static/images/indexnav/8.png', text: '电视热卖' },
+      { url: '../../static/images/indexnav/9.png', text: '家电热卖' },
+      { url: '../../static/images/indexnav/10.png', text: '米粉卡' }],
 
-      {
-        url: '../../static/images/demo/demo3.jpg' },
+      threeAdvObj: {
+        big: { url: '../../static/images/demo/demo1.jpg' },
+        smalltop: { url: '../../static/images/demo/demo2.jpg' },
+        smallbottom: { url: '../../static/images/demo/demo3.jpg' } },
 
+      dataList: [
       {
-        url: '../../static/images/demo/demo4.jpg' }] };
+        url: '../../static/images/demo/list/1.jpg',
+        name: '小米空调',
+        price: 1200 },
+      {
+
+        url: '../../static/images/demo/list/2.jpg',
+        name: '小米空调',
+        price: 1200 },
+      {
+        url: '../../static/images/demo/list/3.jpg',
+        name: '小米空调',
+        price: 1200 },
+      {
+        url: '../../static/images/demo/list/4.jpg',
+        name: '小米空调',
+        price: 1200 }] };
 
 
 
   },
-  onLoad: function onLoad() {
+  onLoad: function onLoad() {var _this = this;
+    // 获取可视区高度
+    uni.getSystemInfo({
+      success: function success(res) {
+        _this.scrollH = res.windowHeight - uni.upx2px(80);
+      } });
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    changeTab: function changeTab(index) {
+      if (this.tabIndex === index) {
+        return;
+      }
+      this.tabIndex = index;
+      this.scrollInto = "tab" + index;
+    },
+    onChangeTab: function onChangeTab(e) {
+      // 监听滑动列表
+      this.changeTab(e.detail.current);
+      this.scrollInto = "tab" + e.detail.current;
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 17 */

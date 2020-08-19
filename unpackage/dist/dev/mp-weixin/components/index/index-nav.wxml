@@ -1,0 +1,1 @@
+<view><view class="row d-flex j-center py-2"><block wx:for="{{indexIconNav}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block><view class="span-4 d-flex flex-column j-center a-center"><image class="j-center" style="width:60rpx;height:60rpx;" src="{{item.url}}" mode="widthFix"></image><view class="a-center">{{item.text}}</view></view></block></block></view></view>

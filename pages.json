@@ -20,7 +20,7 @@
 									"float":"left",
 									"colorPressed":"#fd68001",
 									"fontSize":"22px",
-									"fontSrc":"/static/font/iconfont.tff",
+									"fontSrc":"/static/font/iconfont.ttf",
 									"text":"\ue72c"
 								},
 								{
@@ -28,7 +28,7 @@
 									"float":"right",
 									"colorPressed":"#fd68001",
 									"fontSize":"22px",
-									"fontSrc":"/static/font/iconfont.tff",
+									"fontSrc":"/static/font/iconfont.ttf",
 									"text":"\ue661"
 								}
 							]
@@ -39,7 +39,30 @@
 		{
 			"path": "pages/class/class",
 			"style": {
-				"navigationBarTitleText": "分类"
+				"navigationBarTitleText": "分类",
+				"app-plus": {
+						"scrollIndicator":"none", // 不出现滚动条
+						"bounce":"none",
+						"titleNView": {
+							"searchInput": {
+								"align":"left",
+									"backgroundColor": "#fff",
+									"borderRadius": "6px", //输入框圆角
+									"placeholder": "请输入搜索内容",
+									"disabled": true //disable时点击输入框不置，可以跳到新页面搜索
+							},
+							"buttons":[
+								{
+									"color":"#989898",
+									"float":"right",
+									"colorPressed":"#fd68001",
+									"fontSize":"22px",
+									"fontSrc":"/static/font/iconfont.ttf",
+									"text":"\ue72c"
+								}
+							]
+						}
+				}
 			}
 		},
 		{
@@ -54,7 +77,39 @@
 				"navigationBarTitleText": "我的"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/search/search",
+            "style": {
+            	"navigationBarTitleText": "搜索页",
+            	"app-plus": {
+            			"scrollIndicator":"none", // 不出现滚动条
+            			"titleNView": {
+            				"searchInput": {
+            					"align":"left",
+            						"backgroundColor": "#fff",
+            						"borderRadius": "6px", //输入框圆角
+            						"placeholder": "请输入搜索内容",
+            						"disabled": false //disable时点击输入框不置，可以跳到新页面搜索
+            				},
+            				"buttons":[
+            					{
+            						"color":"#989898",
+            						"float":"right",
+            						"colorPressed":"#fd68001",
+									"fontSize":"16px",
+            						"text":"搜索"
+            					}
+            				]
+            			}
+            	}
+            }
+        }
+        ,{
+            "path" : "pages/search-list/search-list",
+            "style" : {}
+        }
+        
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
