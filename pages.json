@@ -109,6 +109,23 @@
             "style" : {}
         }
         
+        ,{
+            "path" : "pages/detail/detail",
+            "style" : {
+				"app-plus":{
+					"bounce":"none", // 取消回弹动画
+					"scrollIndicator":"none", // 取消滚动条
+					"titleNView":{
+						"type":"transparent",
+						"buttons":[
+							{
+								"type":"menu"
+							}
+						]
+					}
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

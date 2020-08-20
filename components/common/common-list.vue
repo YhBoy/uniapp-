@@ -1,7 +1,7 @@
 <template>
 	<view class="row" style="width: 100%;">
 		<block v-for="(item,index) in dataList" :key="index">
-			<view style="width: 372.5upx;" class="">
+			<view style="width: 372.5upx;" class="" @tap="openDetail">
 				<image :src="item.url" mode="widthFix" lazy-load></image>
 				<view class="p-2">
 					<view class="font-md">{{item.name}}</view>
@@ -26,6 +26,13 @@
 		},
 		props:{
 			dataList:Array
+		},
+		methods:{
+			openDetail(){
+				uni.navigateTo({
+					url:'../../pages/detail/detail'
+				})
+			}
 		}
 	}
 </script>
