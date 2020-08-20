@@ -2077,15 +2077,18 @@ var render = function() {
           style: _vm._$g(1, "s"),
           attrs: { "scroll-y": "true", _i: 1 }
         },
-        [
-          _c(
+        _vm._l(_vm._$g(2, "f"), function(item, index, $20, $30) {
+          return _c(
             "v-uni-view",
-            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
-            _vm._l(_vm._$g(3, "f"), function(item, index, $20, $30) {
-              return _c(
+            {
+              key: item,
+              staticClass: _vm._$g("2-" + $30, "sc"),
+              attrs: { _i: "2-" + $30 }
+            },
+            [
+              _c(
                 "v-uni-view",
                 {
-                  key: item,
                   staticClass: _vm._$g("3-" + $30, "sc"),
                   class: _vm._$g("3-" + $30, "c"),
                   attrs: { _i: "3-" + $30 },
@@ -2097,10 +2100,10 @@ var render = function() {
                 },
                 [_vm._v(_vm._$g("3-" + $30, "t0-0"))]
               )
-            }),
+            ],
             1
           )
-        ],
+        }),
         1
       ),
       _c(
