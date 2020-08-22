@@ -68,7 +68,11 @@
 		{
 			"path": "pages/cart/cart",
 			"style": {
-				"navigationBarTitleText": "购物车"
+				"app-plus":{
+					"titleNView":false,
+					"bounce":"none",
+					"scrollIndicator":"none"
+				}
 			}
 		},
 		{
